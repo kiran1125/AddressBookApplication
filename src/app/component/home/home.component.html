@@ -1,0 +1,46 @@
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../../../assets/Images/logo (1).png" alt="">
+            <div>
+                <span class="address-text">Address</span><br>
+                <span class="address-text address-book">Book</span><br>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="head-content">
+            <div class="person-detail-text">
+                Person Details
+                <div class="person-count">10</div>
+            </div>
+            <a class="add-button" routerLink="/addPerson">
+                <img src="../../../assets/Images/add-24px.svg" alt="">Add Person</a>
+        </div>
+        <div class="table-main">
+            <table id="display" class="table">
+                <tr>
+                    <th>FirstName</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>PhoneNumber</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let e of person">
+                    <td>{{e.firstName}}</td>
+                    <td>{{e.address}}</td>
+                    <td>
+                        {{e.city}}
+                    </td>
+                    <td>{{e.country}}</td>
+                    <td>{{e.phoneNumber}}</td>
+                    <td>
+                        <img  alt="delete" (click)="remove(e)" src="../../../assets/Images/delete-black-18dp.svg">
+                        <img alt="edit" (click)="update(e.id)"src="../../../assets/Images/create-black-18dp.svg">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+</body>
